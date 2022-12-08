@@ -1,1 +1,3 @@
-<p>home works!</p>
+<main>
+    <app-card *ngFor="let card of cards$ | async" [card]="card" ></app-card>
+</main>

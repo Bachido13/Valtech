@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Card } from 'src/app/core/models/card.model';
 import { CardsServices } from 'src/app/core/services/card.services';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class CardComponent implements OnInit {
 
+  @Input()
   card!: Card;
   card$!: Observable<Card>;
   showDescription!: boolean; 
