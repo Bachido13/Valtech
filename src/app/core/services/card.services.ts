@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Card } from "../models/card.model";
 import { Observable, catchError, throwError, tap, Subject, of, mapTo  } from "rxjs";
+require('dotenv').config;
+
 
 @Injectable({
     providedIn: 'root'
