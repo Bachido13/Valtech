@@ -16,8 +16,8 @@ export class CardsServices {
     constructor( private http: HttpClient) { }
 
     getAllCards(): any {
-        this.http.get<Card[]>(process.env.BACKEND_URL).pipe(
-            tap(cards => this.cards$.next(cards)),
+        this.http.get<Card[]>(`http://localhost:3000/api/cards`).pipe( //addresse url du Backend à remplacer
+            tap(cards => this.cards$.next(cards)), //doit correspondre au Backend
             catchError(error => {
                 console.log(error);
                 console.error(error.error.message);
@@ -27,7 +27,7 @@ export class CardsServices {
     }
 
     getCardById(cardId: string): Observable<Card> {
-        return this.http.get<Card>(process.env.BACKEND_URL `/${cardId}`).pipe(
+        return this.http.get<Card>(`http://localhost:3000/api/cards/${cardId}`).pipe( //addresse url du Backend à remplacer, suivi du `/${cardId}`
             catchError(error => throwError(error.error.message))
         );
     }
