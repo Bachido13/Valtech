@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Card } from 'src/app/core/models/card.model';
+import { CardsServices } from 'src/app/core/services/card.services';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  card!: Card;
+  card$!: Observable<Card>;
+  showDescription!: boolean; 
+
+
+  constructor(private cardsServices: CardsServices,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.showDescription = false;
+  }
+
+  onViewCard(id: string) {
+    this.router.navigateByUrl(`card/${this.card._id}`)
   }
 
 }

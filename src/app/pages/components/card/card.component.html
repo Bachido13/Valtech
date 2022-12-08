@@ -1,1 +1,14 @@
-<p>card works!</p>
+<div class="card">
+    <p class="country">
+        {{ card.country | uppercase }}
+    </p>
+    <h2>
+        <strong>{{ card.city | uppercase }}</strong>
+    </h2>
+    <p (hover)="showDescription = true">
+        {{ card.description }}
+    </p>
+    <p id="View" *ngIf="showDescription">
+        <button (click)="onViewCard(card._id)"><strong>Explore More</strong></button>
+    </p>
+</div>
