@@ -1,0 +1,14 @@
+<div class="card-detail" *ngIf="card$ | async as Card">
+    <p class="country">
+        {{ card.country | uppercase }}
+    </p>
+    <h2>
+        <strong>{{ card.city | uppercase }}</strong>
+    </h2>
+    <p>
+        {{ card.description }}
+    </p>
+    <p id="back">
+        <button (click)="onBack()"><strong>Retour</strong></button>
+    </p>
+</div>
