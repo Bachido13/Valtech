@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Card } from "../models/card.model";
 import { Observable, catchError, throwError, tap, Subject, of, mapTo  } from "rxjs";
-require('dotenv').config;
 
 
 @Injectable({
@@ -26,8 +25,8 @@ export class CardsServices {
         ).subscribe();
     }
 
-    getCardById(cardId: string): Observable<Card> {
-        return this.http.get<Card>(`http://localhost:3000/api/cards/${cardId}`).pipe( //addresse url du Backend à remplacer, suivi du `/${cardId}`
+    getCardById(city: string): Observable<Card> {
+        return this.http.get<Card>(`http://localhost:3000/api/cards/${city}`).pipe( //addresse url du Backend à remplacer, suivi du `/${cardId}`
             catchError(error => throwError(error.error.message))
         );
     }

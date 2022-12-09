@@ -17,16 +17,19 @@ export class CardComponent implements OnInit {
   showDescription!: boolean; 
 
 
+
   constructor(private cardsServices: CardsServices,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.showDescription = false;
+
+
   }
 
-  onViewCard(id: string) {
-    this.router.navigateByUrl(`card/${this.card._id}`)
+  onViewCard(city: string) {
+    this.router.navigateByUrl(`card/${this.card.city}`)
   }
 
 }

@@ -22,8 +22,8 @@ export class CardDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.card$ = this.route.params.pipe(
-      map(params => params['id']),
-      switchMap(id => this.cardsServices.getCardById(id)),
+      map(params => params['city']),
+      switchMap(city => this.cardsServices.getCardById(city)),
       tap(card => {
         console.log(card);
         this.card = card;

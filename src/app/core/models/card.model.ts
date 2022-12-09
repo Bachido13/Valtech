@@ -1,7 +1,6 @@
 export class Card {
-    _id!: string;
-    country!: string;
-    city!: string;
-    description!: string;
-    imageUrl!: string;
+    constructor(public country: string,
+                public city: string,
+                public description: string,
+                public imageUr: string,) {}
 }
