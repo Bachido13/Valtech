@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "title";
+    src: url("../../../../assets/font/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "text";
+    src: url("../../../../assets/font/Roboto-Thin.ttf");
+}
+
+main {
+
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;   
+}
+
+@media screen and (min-width:425px) {}
+
+@media screen and (min-width:768px) {
+
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 20%;
+        flex-wrap: nowrap;
+
+        .card {
+            margin: 10px;
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {}
+
+@media screen and (min-width:1440px) {}
+
+@media screen and (min-width:2560px) {}

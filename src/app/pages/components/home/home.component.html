@@ -1,4 +1,9 @@
 <main>
     <app-card *ngFor="let card of cards$ | async" [card]="card" ></app-card>
-    <app-card [card]="venice"></app-card>
+    <app-card [card]="venice" id="venice" class="card"></app-card>
+    <app-card [card]="berlin" id="berlin" class="card"></app-card>
+    <app-card [card]="barcelona" id="barcelona" class="card"></app-card>
+    <app-card [card]="paris" id="paris" class="card"></app-card>
+    <app-card [card]="amsterdam" id="amsterdam" class="card"></app-card>
+    <app-card [card]="london" id="london" class="card"></app-card>
 </main>
